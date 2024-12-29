@@ -1,37 +1,19 @@
-var area = document.getElementById("area");
+var lista = ["Jose", "Henrique", "Rodrigues", 122];
 
-function entrar() {
-  var nome = prompt("Digite o seu nome");
+console.log(lista.indexOf("Henrique"));
 
-  if (nome === "" || nome === null) {
-    alert("Ops algo deu errado");
-    area.innerHTML = "Clique no botão para digitar o seu nome...";
-  } else {
-    area.innerHTML = "Bem vindo " + nome + " ";
+console.log(lista[1]);
 
-    let botaoSair = document.createElement("button");
-    botaoSair.innerText = "Sair da conta";
-    botaoSair.onclick = sair;
-    area.appendChild(botaoSair);
-  }
-}
+console.log((lista[1] = 500));
+console.log(lista[1]);
 
-function sair() {
-  alert("Até mais!");
-  area.innerHTML = "Você saiu!";
-}
+lista.push("Zeca");
 
-function mediaAluno(nota1, nota2) {
-  var media = (nota1 + nota2) / 2;
+lista.shift();
 
-  if (media >= 7) {
-    console.log("Aluno aprovado com a média: " + media);
-  } else if (media < 7) {
-    console.log("Aluno reprovado com a média: " + media);
-  }
-}
+lista.pop();
 
-function aluno(nome, curso) {
-  var mensagem = "Seja bem-vindo " + nome + " ao curso de " + curso;
-  console.log(mensagem);
-}
+console.log(lista.length);
+
+console.log(lista.join("; "));
+console.log(lista);
